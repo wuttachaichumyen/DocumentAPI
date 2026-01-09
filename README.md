@@ -33,3 +33,22 @@ Follow these steps to set up and run the project locally.
 ```bash
 git clone [https://github.com/wuttachaichumyen/DocumentAPI.git](https://github.com/wuttachaichumyen/DocumentAPI.git)
 cd DocumentAPI
+
+### 2. Start the Database
+This project uses Docker to host the PostgreSQL database.
+
+docker-compose up -d
+
+### 3. Apply Migrations
+Create the database schema and seed initial data.
+
+dotnet ef database update --project DocumentAPI
+
+### 4. Run the Application
+dotnet run --project DocumentAPI
+
+🧪 Running Tests
+This project includes unit tests to ensure business logic reliability.
+
+# Run all tests
+dotnet test
