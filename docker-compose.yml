@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15
+    container_name: document_db
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password123
+      POSTGRES_DB: documentdb
+    ports:
+      - "5435:5432"  # <--- เปลี่ยนเลขหน้าเป็น 5435 (เลขหลังห้ามแก้)
+    volumes:
+      - postgres_data_final:/var/lib/postgresql/data # (เปลี่ยนชื่อ Volume อีกสักรอบเพื่อความชัวร์)
+
+volumes:
+  postgres_data_final: # เปลี่ยนชื่อให้ตรงข้างบน
